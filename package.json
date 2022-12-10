@@ -6,6 +6,7 @@
     "scripts": {
         "day": "ts-node src/index.ts",
         "build": "tsc",
+        "format": "prettier --write \"src/**/*.ts\"",
         "lint": "eslint .  --ext .js,.jsx,.ts,.tsx",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

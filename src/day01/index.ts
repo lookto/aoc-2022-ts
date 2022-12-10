@@ -5,34 +5,21 @@ class Day01 {
     static run = () => {
         try {
             const input = fs
-                .readFileSync(
-                    './src/day01/input',
-                    {
-                        encoding:
-                            'utf-8',
-                        flag: 'r',
-                    }
-                )
+                .readFileSync('./src/day01/input', {
+                    encoding: 'utf-8',
+                    flag: 'r',
+                })
                 .split('\n\n');
 
-            if (!input)
-                throw new Error(
-                    'Input file is empty.'
-                );
+            if (!input) throw new Error('Input file is empty.');
 
             const sums = input
                 .map((elv) =>
                     elv
                         .split('\n')
                         .reduce(
-                            (
-                                sumCalories: number,
-                                calories
-                            ) =>
-                                sumCalories +
-                                Number(
-                                    calories
-                                ),
+                            (sumCalories: number, calories) =>
+                                sumCalories + Number(calories),
                             0
                         )
                 )
@@ -43,9 +30,7 @@ class Day01 {
             );
             console.log(
                 `The top three Elves are carrying ${
-                    sums[0] +
-                    sums[1] +
-                    sums[2]
+                    sums[0] + sums[1] + sums[2]
                 } calories in total.`
             );
         } catch (error) {
